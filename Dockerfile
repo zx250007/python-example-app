@@ -1,0 +1,10 @@
+FROM python:3.7-apline
+
+COPY . /app
+
+WORKDIR /app
+RUN pip3 install -r requirements.txt
+
+USER 1001
+EXPOSE 5000
+CMP("python3", "/app/app.py")
